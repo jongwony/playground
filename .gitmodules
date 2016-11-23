@@ -1,0 +1,6 @@
+[submodule "bucket-prototype"]
+	path = bucket-prototype
+	url = https://github.com/lastone9182/bucket-prototype
+[submodule "Java-test"]
+	path = Java-test
+	url = https://github.com/lastone9182/Java-test
