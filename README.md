@@ -4,6 +4,18 @@ Small Project Set
 
 ---
 
+## New Submodules
+
+```
+git submodule add MYURL
+```
+
+## Push
+
+```
+git push --recurse-submodules=on-demand
+```
+
 ## Clone
 
 1. All Project Clone
@@ -23,5 +35,9 @@ git submodule update --init --recursive
 3. Update specific submodules
 
 ```
+# DevRestrictArea directory
 git submodule update --remote PROJECT
+
+# in submodule directory
+git fetch
 ```
