@@ -4,3 +4,6 @@
 [submodule "Java-test"]
 	path = Java-test
 	url = https://github.com/lastone9182/Java-test
+[submodule "goldbach_conjecture"]
+	path = goldbach_conjecture
+	url = https://github.com/lastone9182/goldbach_conjecture.git
