@@ -21,13 +21,13 @@ git push --recurse-submodules=on-demand
 - All Project Clone
 
 ```
-git clone --recursive https://github.com/lastone9182/DevRestrictArea.git
+git clone --recursive https://github.com/lastone9182/RestrictZone.git
 ```
 
 - If skip `--recursive` option
 
 ```
-git clone https://github.com/lastone9182/DevRestrictArea.git
+git clone https://github.com/lastone9182/RestrictZone.git
 
 git submodule update --init --recursive
 ```
