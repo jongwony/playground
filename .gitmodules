@@ -7,3 +7,6 @@
 [submodule "goldbach_conjecture"]
 	path = goldbach_conjecture
 	url = https://github.com/lastone9182/goldbach_conjecture.git
+[submodule "Java-bucket"]
+	path = Java-bucket
+	url = https://github.com/lastone9182/Java-bucket.git
