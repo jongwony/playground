@@ -1,9 +1,9 @@
-[submodule "bucket-prototype"]
+[submodule "Python-bucket"]
 	path = bucket-prototype
-	url = https://github.com/lastone9182/bucket-prototype
-[submodule "Java-test"]
+	url = https://github.com/lastone9182/Python-bucket.git
+[submodule "Java_number-system"]
 	path = Java-test
-	url = https://github.com/lastone9182/Java-test
+	url = https://github.com/lastone9182/Java_number-system.git
 [submodule "goldbach_conjecture"]
 	path = goldbach_conjecture
 	url = https://github.com/lastone9182/goldbach_conjecture.git
