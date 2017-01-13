@@ -16,7 +16,7 @@ git submodule add MYURL
 git push --recurse-submodules=on-demand
 ```
 
-## Clone
+## Clone & Update
 
 - All Project Clone
 
