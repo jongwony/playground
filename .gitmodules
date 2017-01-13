@@ -13,3 +13,6 @@
 [submodule "python-bucket"]
 	path = python-bucket
 	url = https://github.com/lastone9182/python-bucket.git
+[submodule "layerwindowtray"]
+	path = layerwindowtray
+	url = https://github.com/lastone9182/layerwindowtray
