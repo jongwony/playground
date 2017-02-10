@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+
+{% block head %} 
+	<meta charset="utf-8">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel=    "stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block title %}WebSocket{% endblock %}
+
+{% block body %}
+<h1> Hello Js!! </h1>
+<video id='test' autoplay></video>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/adapter.js') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='js/common.js') }}">
+<script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='js/websock.js')  }}"></script>
+{% endblock %}
