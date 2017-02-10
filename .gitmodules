@@ -7,3 +7,12 @@
 [submodule "2016_OOP_study"]
 	path = 2016_OOP_study
 	url = https://github.com/RestrictedZone/2016_OOP_study.git
+[submodule "php_dba47"]
+	path = php_dba47
+	url = https://github.com/lastone9182/php_dba47.git
+[submodule "NetworkProgramming"]
+	path = NetworkProgramming
+	url = https://github.com/lastone9182/NetworkProgramming.git
+[submodule "flask"]
+	path = flask
+	url = https://github.com/lastone9182/flask.git
