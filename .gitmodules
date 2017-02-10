@@ -1,21 +1,9 @@
-[submodule "Python-bucket"]
-	path = bucket-prototype
-	url = https://github.com/lastone9182/Python-bucket.git
-[submodule "Java_number-system"]
-	path = Java_number-system
-	url = https://github.com/lastone9182/Java_number-system.git
-[submodule "goldbach_conjecture"]
-	path = goldbach_conjecture
-	url = https://github.com/lastone9182/goldbach_conjecture.git
-[submodule "Java-bucket"]
-	path = Java-bucket
-	url = https://github.com/lastone9182/Java-bucket.git
-[submodule "python-bucket"]
-	path = python-bucket
-	url = https://github.com/lastone9182/python-bucket.git
 [submodule "layerwindowtray"]
 	path = layerwindowtray
 	url = https://github.com/lastone9182/layerwindowtray.git
 [submodule "my_pygame"]
 	path = my_pygame
 	url = https://github.com/lastone9182/my_pygame.git
+[submodule "2016_OOP_study"]
+	path = 2016_OOP_study
+	url = https://github.com/RestrictedZone/2016_OOP_study.git
