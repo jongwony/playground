@@ -1,1 +1,6 @@
-makeics/__pycache__
+# ignore all subdirectories
+
+**/*.Rhistory
+**/*.RData
+
+**/__pycache__
