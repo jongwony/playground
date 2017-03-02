@@ -6,3 +6,9 @@
 **/__pycache__
 
 test/
+
+# ICal file
+**/*.ics
+
+# PyCharm
+**/.idea/

@@ -3,7 +3,7 @@ pollution <- read.csv("../avgpm25.csv", colClasses=c("numeric", "character", "fa
 ## Five Number Summary
 summary(pollution$pm25)
 
-par(mfrow=c(2, 2))
+par(mfrow=c(1, 3))
 
 ## Histogram
 hist(pollution$pm25, col="green", breaks=100)
