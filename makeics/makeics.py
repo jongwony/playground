@@ -16,13 +16,25 @@ MINUTE = r'(?P<MINUTE>\d+)분'
 WS = r'(?P<WS>\s+)'
 
 if __name__ == '__main__':
+
+    # date input
+    desired = input('Enter the Desired Date: ')
+    title = input('Enter Summary: ')
+    location = input('Enter Location: ')
+    desc = input('Enter Description: ')
+    duration = input('Enter Duration(시간): ')
+    alarm = input('Enter Alarm(시간 전): ')
+
+    duration = int(duration)
+    alarm = int(alarm)
+    assert duration > 0, "숫자를 입력해야 합니다."
+    assert alarm > 0, "숫자를 입력해야 합니다."
+
     token_key = ['YEAR', 'MONTH', 'DAY', 'HOUR', 'MINUTE']
     default_key = ['%Y', '%m', '%d', '%H', '%M']
 
     uid = time.strftime('%Y-%m-%d-%H%M%S')
 
-    # date input
-    desired = input('Enter the Desired Date: ')
     date_pat = re.compile('|'.join([YEAR, MONTH, DAY, HOUR, MINUTE, WS]))
     parse_date = tokenize.Token()
 
@@ -30,28 +42,20 @@ if __name__ == '__main__':
 
     # parsing
     for tok, cur in zip(token_key, default_key):
-        if tok is 'HOUR':
-            dateDict[tok] = '12'
-        elif tok is 'MINUTE':
-            dateDict[tok] = '0'
-
         if tok not in dateDict.keys():
             dateDict[tok] = time.strftime(cur)
 
-    target_str = dateDict['YEAR'] + \
-                 dateDict['MONTH'] + \
-                 dateDict['DAY'] + \
-                 dateDict['HOUR'] + \
-                 dateDict['MINUTE']
+    start_date_str = dateDict['YEAR'] + \
+                     dateDict['MONTH'] + \
+                     dateDict['DAY'] + \
+                     dateDict['HOUR'] + \
+                     dateDict['MINUTE']
 
-    target_date = datetime.datetime.strptime(target_str, ''.join(default_key))
-    start_date = target_date - datetime.timedelta(hours=1)
+    start_date = datetime.datetime.strptime(start_date_str, ''.join(default_key))
+    end_date = start_date + datetime.timedelta(hours=duration)
 
-    start_str = datetime.datetime.strftime(start_date, '%Y%m%dT%H%M%S')
-    target_str = datetime.datetime.strftime(target_date, '%Y%m%dT%H%M%S')
-
-    ## plan memo
-    sentence = input('Enter Your Plan: ')
+    start_date_str = datetime.datetime.strftime(start_date, '%Y%m%dT%H%M%S')
+    end_date_str = datetime.datetime.strftime(end_date, '%Y%m%dT%H%M%S')
 
     check_text = '### CHECK ###\n{}년 {}월 {}일 {}시 {}분 이벤트\n {}'.format(
         dateDict['YEAR'],
@@ -59,7 +63,7 @@ if __name__ == '__main__':
         dateDict['DAY'],
         dateDict['HOUR'],
         dateDict['MINUTE'],
-        sentence
+        desc
     )
     print(check_text, end=' ')
     yn = input('y/n: ')
@@ -76,27 +80,31 @@ BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-PRODID:BOT Product
+PRODID:Product by Jongwon
 BEGIN:VEVENT
 UID:{}
 DTSTAMP:{}
 DTSTART:{}
 DTEND:{}
+LOCATION:{}
 SUMMARY:{}
 DESCRIPTION:{}
 BEGIN: VALARM
-TRIGGER: -PT1440M
-DESCRIPTION: 자동 생성된 이벤트 입니다.
+TRIGGER: -PT{}M
+DESCRIPTION:{}
 END:VALARM
 END:VEVENT
 END:VCALLENDAR
 """.format(
         uid,
         time.strftime('%Y%m%dT%H%M%S'),
-        start_str,
-        target_str,
-        sentence,
-        sentence,
+        end_date_str,
+        start_date_str,
+        location,
+        title,
+        desc,
+        alarm*60,
+        desc
     )
 
     print(ics_format)
