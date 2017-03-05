@@ -16,3 +16,6 @@
 [submodule "flask"]
 	path = flask
 	url = https://github.com/lastone9182/flask.git
+[submodule "codingTheMatrix"]
+	path = codingTheMatrix
+	url = https://github.com/RestrictedZone/codingTheMatrix
