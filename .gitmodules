@@ -19,3 +19,6 @@
 [submodule "codingTheMatrix"]
 	path = codingTheMatrix
 	url = https://github.com/RestrictedZone/codingTheMatrix
+[submodule "hypertrans"]
+	path = hypertrans
+	url = https://github.com/lastone9182/hypertrans.git
