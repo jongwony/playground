@@ -22,3 +22,6 @@
 [submodule "hypertrans"]
 	path = hypertrans
 	url = https://github.com/lastone9182/hypertrans.git
+[submodule "laptop_rhythm"]
+	path = laptop_rhythm
+	url = https://github.com/lastone9182/laptop_rhythm.git
