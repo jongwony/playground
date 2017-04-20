@@ -25,3 +25,6 @@
 [submodule "laptop_rhythm"]
 	path = laptop_rhythm
 	url = https://github.com/lastone9182/laptop_rhythm.git
+[submodule "telegramBot"]
+	path = telegramBot
+	url = https://github.com/lastone9182/telegramBot.git
