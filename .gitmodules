@@ -28,3 +28,6 @@
 [submodule "telegramBot"]
 	path = telegramBot
 	url = https://github.com/lastone9182/telegramBot.git
+[submodule "python-javascript"]
+	path = python-javascript
+	url = https://github.com/lastone9182/python-javascript.git
