@@ -31,3 +31,9 @@
 [submodule "python-javascript"]
 	path = python-javascript
 	url = https://github.com/lastone9182/python-javascript.git
+[submodule "console-calendar"]
+	path = console-calendar
+	url = https://github.com/lastone9182/console-calendar.git
+[submodule "console-keep"]
+	path = console-keep
+	url = https://github.com/lastone9182/console-keep.git
