@@ -12,3 +12,6 @@ test/
 
 # PyCharm
 **/.idea/
+
+# OSX
+**/.DS_Store
