@@ -40,3 +40,9 @@
 [submodule "issue_tracking_tutorial"]
 	path = issue_tracking_tutorial
 	url = https://github.com/lastone9182/issue_tracking_tutorial.git
+[submodule "proto_pytelegram"]
+	path = proto_pytelegram
+	url = https://github.com/lastone9182/proto_pytelegram.git
+[submodule "nlptaggingbot"]
+	path = nlptaggingbot
+	url = https://github.com/lastone9182/nlptaggingbot.git
