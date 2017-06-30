@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+import os
+import yaml
+import shutil
+
+INSTALLED_PATH = '/Applications/League of Legends.app/Contents/LoL/RADS/projects/league_client/releases'
+
+if __name__ == '__main__':
+    patch_dirs = [os.path.join(INSTALLED_PATH, patch_dir) for patch_dir in os.listdir(INSTALLED_PATH)]
+    recent_patch_dir = max(patch_dirs, key=os.path.getmtime)
+    recent_patch_message = 'Recent Patch: {}'.format(recent_patch_dir)
+    print(recent_patch_message)
+
+    yaml_file = os.path.join(recent_patch_dir, 'deploy', 'system.yaml')
+    copy_yaml_file = os.path.join(recent_patch_dir, 'deploy', 'system.yaml.backup')
+
+    if not os.path.isfile(copy_yaml_file):
+        shutil.copy2(yaml_file, copy_yaml_file)
+
+    with open(copy_yaml_file, mode='r') as f:
+        data = yaml.load(f)
+
+    # use shallow copy
+    kor_data = data
+    oceania_region_data = kor_data['region_data']['OC1']
+    oceania_region_data['rso_platform_id'] = 'KR'
+    oceania_region_data['servers']['chat']['chat_host'] = 'chat.kr.lol.riotgames.com'
+    oceania_region_data['servers']['lcds']['login_queue_url'] = 'https://lq.kr.lol.riotgames.com/login-queue/rest/queues/lol'
+    oceania_region_data['servers']['license_agreement_urls'] = {'eula': 'http://www.leagueoflegends.co.kr/?m=rules&cid=3', 'terms_of_use': 'http://www.leagueoflegends.co.kr/?m=rules&cid=1'}
+    oceania_region_data['servers']['payments']['payments_host'] = 'https://plstore.kr.lol.riotgames.com'
+    oceania_region_data['servers']['service_status'] = {'api_url': 'https://status.leagueoflegends.com/shards/kr/synopsis', 'human_readable_status_url': 'https://status.leagueoflegends.com/#kr'}
+    oceania_region_data['servers']['store_url'] = 'https://store.kr.lol.riotgames.com'
+    oceania_region_data['web_region'] = 'kr'
+
+    with open(yaml_file, mode='w') as f:
+        yaml.dump(kor_data, f)
+
+    print('Success!')
