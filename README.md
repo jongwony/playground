@@ -2,4 +2,4 @@
 
 Small Project Set
 
-## [Gists](//gist.github.com/lastone9182)
+## [Gists](//gist.github.com/jongwony)
